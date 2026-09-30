@@ -6,8 +6,9 @@ const PORT = process.env.PORT || 3000;
 app.get("/", (req, res) => {
   res.json({
     application: "Acme Equipment Monitoring",
+    environment: "production",
     status: "online",
-    version: "1.0.0"
+    version: "1.1.0"
   });
 });
 
