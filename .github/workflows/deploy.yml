@@ -1,0 +1,24 @@
+name: Deploy Acme Equipment
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::337023347628:role/GitHubActions-AcmeEquipment-Deploy
+          aws-region: eu-north-1
+
+      - name: Verify AWS identity
+        run: aws sts get-caller-identity
