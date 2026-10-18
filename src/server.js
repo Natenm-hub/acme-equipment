@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
     application: "Acme Equipment Monitoring",
     environment: "production",
     status: "online",
-    version: "1.1.0"
+    version: "1.2.0"
   });
 });
 
