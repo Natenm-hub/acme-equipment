@@ -46,7 +46,3 @@ test("Close test server", async () => {
     });
   });
 });
-
-test("Intentional failure to verify CI/CD protection", () => {
-  assert.equal(1, 2);
-});
