@@ -20,24 +20,16 @@ app.get("/health", (req, res) => {
 
 app.get("/api/equipment", (req, res) => {
   res.json([
-    {
-      id: 1,
-      name: "Excavator-01",
-      status: "running"
-    },
-    {
-      id: 2,
-      name: "Generator-01",
-      status: "running"
-    },
-    {
-      id: 3,
-      name: "Pump-01",
-      status: "maintenance"
-    }
+    { id: 1, name: "Excavator-01", status: "running" },
+    { id: 2, name: "Generator-01", status: "running" },
+    { id: 3, name: "Pump-01", status: "maintenance" }
   ]);
 });
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Acme Equipment application running on port ${PORT}`);
-});
+module.exports = app;
+
+if (require.main === module) {
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Acme Equipment application running on port ${PORT}`);
+  });
+}
